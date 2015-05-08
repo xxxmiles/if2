@@ -1,1 +1,48 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_whileUntil" id="226" inline="false" x="26" y="67">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="233">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="controls_if" id="38" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="240" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="326">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="333">
+                <field name="NUM">75</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_right" id="61"></block>
+        </statement>
+        <statement name="ELSE">
+          <block type="movement_forward" id="250"></block>
+        </statement>
+        <next>
+          <block type="robot_delay" id="252" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="269">
+                <field name="NUM">200</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="movement_stop" id="308"></block>
+    </next>
+  </block>
+</xml>
